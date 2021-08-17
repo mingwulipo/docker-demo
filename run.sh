@@ -5,7 +5,7 @@ mvn clean install -Dmaven.test.skip=true
 
 tag=`head -1 version`
 echo "tag:$tag"
-img="http://harbor.fastai.top/java/docker-demo:$tag"
+img="harbor.fastai.top/java/docker-demo:$tag"
 echo "image:$img"
 
 docker build -t $img ./
