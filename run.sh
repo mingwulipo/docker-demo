@@ -5,15 +5,12 @@ mvn clean install -Dmaven.test.skip=true
 
 tag=`head -1 version`
 echo "tag:$tag"
-img="uccreg.iblackvip.com:5000/java/docker-demo:$tag"
+img="https://harbor.fastai.top/java/docker-demo:$tag"
 echo "image:$img"
 
 docker build -t $img ./
 docker rm -v -f docker-demo && docker run -p 8080:8080 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro --name docker-demo -d $img
 echo "创建镜像和启动容器成功!"
-
-#找冯斌创建账户和密码
-docker login https://harbor.fastai.top/
 
 docker push $img
 echo "推送镜像成功!"
