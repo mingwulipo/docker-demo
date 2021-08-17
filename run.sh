@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mvn clean install -Dmaven.test.skip=true
+
 case $1 in
     docker-demo)
         echo "开始构建docker-demo项目，请记得拉取最新代码及编译通过"
