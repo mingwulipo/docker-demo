@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @desc: TODO
@@ -23,7 +24,9 @@ public class UserController {
      */
     @RequestMapping("list")
     public Object listUser() {
-        return Arrays.asList(new User(1,"Jack"),new User(2,"Bill"));
+        List<User> users = Arrays.asList(new User(1, "Jack"), new User(2, "Bill"));
+        log.info("/user/list = {}", users);
+        return users;
     }
 
 }
