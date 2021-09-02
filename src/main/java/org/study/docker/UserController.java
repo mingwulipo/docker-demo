@@ -33,7 +33,7 @@ public class UserController {
      * http://localhost:8080/user/get
      * @return
      */
-    @RequestMapping("get")
+    //@RequestMapping("get")
     public Object get(Integer id) {
         log.info("/user/get | id = {}", id);
         User user = null;
